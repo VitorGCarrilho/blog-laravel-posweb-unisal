@@ -20,6 +20,8 @@ class EntryController extends Controller
         
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -63,7 +65,9 @@ class EntryController extends Controller
      */
     public function show($id)
     {
-        //
+        $posts = \App\Post::where('author_id',$id)->get();
+
+        return view ('entry/index')->with('posts', $posts);
     }
 
     /**

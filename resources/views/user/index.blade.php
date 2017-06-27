@@ -22,7 +22,7 @@
 				</span>
 			</span>
 			<span class="mdl-list__item-secondary-content">
-				{{ link_to_action('EntryController@edit','Posts', $author->id,array('class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent')) }}
+				{{ link_to_action('EntryController@show','Posts', $author ,array('class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent')) }}
 
 			</span>
 			<span class="mdl-list__item-secondary-content">
