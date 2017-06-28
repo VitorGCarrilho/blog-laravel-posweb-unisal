@@ -16,7 +16,11 @@ class UserController extends Controller
     }
 
     public function show ($id) {
-		return view('user/show', ['id' => $id]);		
+    	$author = \App\Author::find($id);
+    	$posts = \App\Post::where('author_id',$id)->get();
+
+        //return view ('entry/index')->with('posts', $posts);
+		return view('user/show', ['author' => $author, 'posts' => $posts]);		
  	}
 
 }

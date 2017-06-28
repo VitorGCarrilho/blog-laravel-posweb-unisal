@@ -65,9 +65,10 @@ class EntryController extends Controller
      */
     public function show($id)
     {
-        $posts = \App\Post::where('author_id',$id)->get();
+        $post = \App\Post::find($id);
+        $author = \App\Author::find($post->author_id);
 
-        return view ('entry/index')->with('posts', $posts);
+        return view ('entry/view', ['author' => $author, 'post' => $post]);
     }
 
     /**
