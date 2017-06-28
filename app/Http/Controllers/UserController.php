@@ -66,6 +66,11 @@ class UserController extends Controller
 
     public function destroy($id)
     {
+    	
+    	$posts = \App\Post::where('author_id',$id)->get();
+    	foreach ($posts as $post) {
+    		\App\Post::destroy($post->id);
+    	}
         $author = \App\Author::destroy($id);
         $authors = \App\Author::all();
         return view ('user/index')->with('authors', $authors);
