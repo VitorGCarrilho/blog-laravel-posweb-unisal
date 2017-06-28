@@ -16,6 +16,12 @@ class UserController extends Controller
         
     }
 
+    public function create()
+    {
+        //
+         return view ('user/create');
+    }
+
     public function show ($id) {
     	$author = \App\Author::find($id);
     	$posts = \App\Post::where('author_id',$id)->get();
@@ -38,6 +44,7 @@ class UserController extends Controller
         $author->username = $request->username;
         $author->email = $request->email;
         $author->about = $request->about;
+        $author->modified_at = date("Y-m-d");
         
         $author->save();
         return redirect()->action('UserController@index');

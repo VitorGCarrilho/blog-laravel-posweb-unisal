@@ -7,7 +7,10 @@
 @section ('content')
 
 <div class="mdl-cell mdl-cell--12-col">
-	<h2>Lista de autores </h2>
+	<h2>Author(User)'s List </h2>
+	<h4>Add Author</h4>
+	{{ link_to_action('UserController@create','+', null,array('class' => 'mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored')) }}
+	
 </div>
 
 @foreach ($authors as $author) 
