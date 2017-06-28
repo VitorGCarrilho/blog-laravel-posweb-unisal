@@ -63,4 +63,12 @@ class UserController extends Controller
         return redirect()->action('UserController@index');
     }
 
+
+    public function destroy($id)
+    {
+        $author = \App\Author::destroy($id);
+        $authors = \App\Author::all();
+        return view ('user/index')->with('authors', $authors);
+    }
+
 }
