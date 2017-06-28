@@ -113,6 +113,8 @@ class EntryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = \App\Post::destroy($id);
+        $posts = \App\Post::all();
+        return view ('entry/index')->with('posts', $posts);
     }
 }

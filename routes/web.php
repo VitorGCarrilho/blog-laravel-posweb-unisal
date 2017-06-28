@@ -29,8 +29,8 @@ Route::get('helloworld', function (){
 });
 
 
-Route::get('user/{id}', 'UserController@show');
-Route::get('user/', 'UserController@index');
+//Route::get('user/{id}', 'UserController@show');
+Route::resource('user', 'UserController');
 
 //Route::get('entry/popular' , 'EntryController@');
 Route::resource('entry', 'EntryController');

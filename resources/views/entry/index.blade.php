@@ -29,7 +29,12 @@
 		    </p>
 		  </div>
 		  <div class="mdl-card__actions mdl-card--border">
-		    {{link_to_action('EntryController@edit','Edit', $post->id,array('class' => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect') )}}
+		    {{link_to_action('EntryController@show','View', $post->id,array('class' => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect') )}}
+		    {{link_to_action('EntryController@edit','Edit', $post->id,array('class' => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect') )}}	
+		    {{ Form::model($post, ['method' => 'DELETE', 'action' => ['EntryController@destroy', $post->id]]) }}
+		    	{{Form::submit('Delete',array('class' => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect')) }}
+		    {{ Form::close() }}
+
 		  </div>
 		</div>
 	</div>
