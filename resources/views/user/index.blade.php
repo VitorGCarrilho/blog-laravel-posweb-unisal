@@ -29,8 +29,14 @@
 
 			</span>
 			<span class="mdl-list__item-secondary-content">
-				{{ link_to_action('UserController@edit','Edit', $author->id,array('class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent')) }}
+				{{ link_to_action('UserController@edit','Edit', $author->id ,array('class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent')) }}
 			</span>
+			<span class="mdl-list__item-secondary-content">
+				{{ Form::model($author, ['method' => 'DELETE', 'action' => ['UserController@destroy', $author->id]]) }}
+			    	{{Form::submit('Delete',array('class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent')) }}
+			    {{ Form::close() }}
+			</span>
+
 		</li>
 	</ul>
 </div>

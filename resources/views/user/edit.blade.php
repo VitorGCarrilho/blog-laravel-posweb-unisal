@@ -6,8 +6,7 @@
 
 	<div class="mdl-cell mdl-cell--12-col"> <h2>Editar Author</h2> </div>
 
-	{{ Form::open(array('action' => 'UserController@store')) }}
-
+	{{ Form::model($author, ['method' => 'PATCH', 'action' => ['UserController@update', $author->id]]) }}
 		<div class="mdl-cell mdl-cell--12-col">
 			{{Form::label('name' , 'Name: ')  }}
 			{{Form::text('name') }}
