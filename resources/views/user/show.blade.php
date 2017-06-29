@@ -25,7 +25,7 @@
 		</ul>
 
 		<span class="mdl-list__item-secondary-content">
-			{{ link_to_action('EntryController@edit','Edit', $author->id,array('class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent')) }}
+			{{ link_to_action('UserController@edit','Edit', $author->id,array('class' => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent')) }}
 		</span>
 	</div>
 	<div class="mdl-cell mdl-cell--6-col">
